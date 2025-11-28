@@ -3,11 +3,10 @@
 namespace App\Filament\Resources\Tanks\Pages;
 
 use App\Filament\Resources\Tanks\TankResource;
-use Filament\Actions\DeleteAction;
 use Filament\Actions\Action;
-use Filament\Resources\Pages\EditRecord;
+use Filament\Resources\Pages\ViewRecord;
 
-class EditTank extends EditRecord
+class ViewTank extends ViewRecord
 {
     protected static string $resource = TankResource::class;
 
@@ -19,7 +18,6 @@ class EditTank extends EditRecord
                 ->icon('heroicon-o-printer')
                 ->url(fn () => route('tanks.print', $this->record))
                 ->openUrlInNewTab(),
-            DeleteAction::make(),
         ];
     }
 }
