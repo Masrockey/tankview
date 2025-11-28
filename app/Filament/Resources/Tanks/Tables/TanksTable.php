@@ -6,6 +6,7 @@ use Filament\Actions\BulkActionGroup;
 use Filament\Actions\DeleteBulkAction;
 use Filament\Actions\EditAction;
 use Filament\Tables\Columns\TextColumn;
+use Filament\Tables\Columns\ImageColumn;
 use Filament\Tables\Table;
 
 class TanksTable
@@ -19,8 +20,8 @@ class TanksTable
                     ->sortable(),
                 TextColumn::make('nama_konsumen')
                     ->searchable(),
-                TextColumn::make('foto_kondisi')
-                    ->searchable(),
+                ImageColumn::make('foto_kondisi')
+                    ->imageHeight(50),
                 TextColumn::make('plat_no')
                     ->searchable(),
                 TextColumn::make('no_mesin')

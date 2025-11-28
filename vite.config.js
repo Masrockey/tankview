@@ -7,7 +7,7 @@ export default defineConfig({
         laravel({
             input: ['resources/css/app.css',
                     'resources/js/app.js', 
-                    'resources/css/nord-theme.css'],
+                    'vendor/resma/filament-awin-theme/resources/css/theme.css'],
             refresh: true,
         }),
         tailwindcss(),
