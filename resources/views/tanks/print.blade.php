@@ -142,25 +142,16 @@
         
         <!-- Print Content -->
         <div class="print-content">
-            <!-- Photo Section -->
-            @if($tank->foto_kondisi)
+            <!-- Photo Section (QR Code) -->
             <div class="photo-section">
-                <h3 style="margin-bottom: 15px; color: #333;">Foto Kondisi Tank</h3>
-                <!-- Debug info (remove in production) -->
-                <div style="font-size: 10px; color: #999; margin-bottom: 10px; display: none;">
-                    Debug: {{ $tank->foto_kondisi }}
+                <h3 style="margin-bottom: 15px; color: #333;">Scan Foto Kondisi</h3>
+                <div style="display: inline-block; padding: 10px; border: 1px solid #ddd; background: white;">
+                    {!! $qrCode !!}
                 </div>
-                <img src="{{ $tank->foto_kondisi }}" alt="Foto Kondisi Tank"
-                     onerror="this.onerror=null; this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwIiBoZWlnaHQ9IjEwMCIgZmlsbD0iI2YwZjBmMCIvPjx0ZXh0IHg9IjUwIiB5PSI1MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY3NDhiIiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7Gm90byDPC90ZXh0PjwvZGVmcz48L3N2Zz4='; this.alt='Foto tidak tersedia';" />
+                <p style="margin-top: 10px; font-size: 12px; color: #666;">
+                    Scan QR Code di atas untuk melihat foto kondisi tank
+                </p>
             </div>
-            @else
-            <div class="photo-section">
-                <h3 style="margin-bottom: 15px; color: #333;">Foto Kondisi Tank</h3>
-                <div style="padding: 50px; background: #f0f0f0; border: 2px dashed #ccc; border-radius: 8px; color: #666;">
-                    📷 Foto tidak tersedia
-                </div>
-            </div>
-            @endif
             
             <!-- Information Grid -->
             <div class="info-grid">
@@ -202,9 +193,9 @@
             <!-- Kesimpulan Section -->
             <div class="kesimpulan-section">
                 <h3 style="margin-top: 0; color: #333;">Kesimpulan Pemeriksaan</h3>
-                <p style="margin: 10px 0; line-height: 1.6; color: #666;">
-                    {{ $tank->kesimpulan }}
-                </p>
+                <div style="margin: 10px 0; line-height: 1.6; color: #666;">
+                    {!! $tank->kesimpulan !!}
+                </div>
             </div>
         </div>
         
@@ -212,7 +203,7 @@
         <div class="footer">
             <p style="margin: 0;">
                 Dokumen ini dicetak pada tanggal {{ now()->format('d/m/Y H:i') }}<br>
-                Sistem Manajemen Tank - TankView
+                Sistem Manajemen Tangki - TangkiView
             </p>
         </div>
     </div>

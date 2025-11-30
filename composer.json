@@ -8,6 +8,7 @@
     "require": {
         "php": "^8.2",
         "andreia/filament-nord-theme": "2.0",
+        "bacon/bacon-qr-code": "^3.0",
         "emmanpbarrameda/filament-take-picture-field": "^1.1",
         "filament/filament": "^4.2",
         "laravel/framework": "^12.0",
